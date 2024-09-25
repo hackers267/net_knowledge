@@ -100,6 +100,78 @@ console.log(b); // { a : 3}
 
 ## 变量提升
 
+TODO:
+
 ## 暂时性死区
 
+TODO:
+
 ## 基础类型
+
+在Js中，主要有下面几种基础类型：
+
+- Boolean
+- String
+- Number
+- Null
+- Undefined
+- Symbol
+
+这几个类型本身都是比较简单的，其复杂性在于其类型转换，其中比较而言，简单的有`Boolean`,`Null`和`Undefined`，其次是`Number`和`String`,而`Symbol`则是在平时编程中比较少用到的。
+
+### Boolean
+
+在Js中，Boolean只有两个值`true`和`false`,但是在Js中，其他类型的值都可以转为布尔值。其中，只有以下的值转为`false`(通常称之为假值):
+
+- ''(空字符串)
+- 0
+- +0
+- -0
+- NaN
+- undefined
+- null
+- false
+
+其它的值都为真值(转为布尔值时为`true`)
+
+### Null
+
+`null`在Js中表示一个对空对象的引用,其表示没有指向任何对象。
+
+#### 类型转换
+
+- ToString 'null'
+- ToNumber 0
+- ToBolean false
+
+#### 比较
+
+在使用`==`比较的时候，`null`只与`null`和`undefined`比较为`ture`，其它都为`false`。
+
+## 类型转换
+
+## 特殊值
+
+在Js中，存在以下几个特殊值和特殊情况:
+
+- null
+- undefined
+- NaN
+
+### null
+
+1. `null` 只和 `null` 本身严格相等
+2. `null` 和 `null`  与 `undefined` 相等
+3. `null` 的 `typeof` 的值为`object`.
+
+### undefined
+
+1. `undefined` 只和 `undefined` 本身严格相等
+2. `undefined` 和 `null` 与 `Undefined` 相等
+3. `undefined` 的 `typeof` 的值为 `undefined`
+
+### NaN
+
+1. NaN 不和任何值相等。包括其本身
+2. `NaN` 的 `typeof` 的值为 `number`. 其是一个特殊的数值类型
+3. 判断一个值是否为`NaN`,可以使用全局函数`isNaN`或是`Number`的方法`Number.isNaN`
