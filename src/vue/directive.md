@@ -86,5 +86,37 @@ v-show的改变元素的可见性是通过其`display`属性来控制的。其�
 
 在通常的情况下，我们在使用`v-for`时，都需要使用绑定一个`key`属性。这个`key`需要绑定一个唯一值。以标记这个元素的唯一性，有利于提高性能。
 
+### v-on
+
+v-on用于绑定事件监听器。详情请见[事件监听](./event.md)
+
+### v-bind
+
+v-bind用于绑定属性。详情详见[属性绑定](./attr.md)
+
+### v-model
+
+v-model用于表单或元素上创建数据的双向绑定。详情请见[双向绑定](./model.md)
+
+### v-slot
+
+TODO:
+
+### v-pre
+
+TODO:
+
+### v-once
+
+TODO:
+
+### v-memo
+
+TODO:
+
+### v-cloak
+
+TODO:
+
 ## 自定义指令
 
