@@ -8,7 +8,7 @@ webpack配置中最主要的配置有下面几部分：
 
 - entry [入口配置](./entry.md)
 - output[输出配置](./output.md)
-- module(模块配置)
+- module[模块配置](./module.md)
 - plugins(插件配置)
 - mode[模式配置](./mode.md)
 
