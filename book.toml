@@ -3,7 +3,7 @@ authors = ["silence_zhpf"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Network_Knowledge"
+title = "编程知识"
 
 [preprocessor]
 
@@ -14,3 +14,8 @@ command = "mdbook-mermaid"
 
 [output.html]
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
+additional-css = ["style/index.css"]
+
+[output.html.fold]
+enable = true
+level = 1
