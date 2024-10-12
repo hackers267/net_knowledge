@@ -26,5 +26,6 @@
     - [输出配置](./buildtool/webpack/output.md)
     - [模块](./buildtool/webpack/module.md)
       - [loader](./buildtool/webpack/loader.md)
+      - [静态资源](./buildtool/webpack/asset.md)
     - [模式](./buildtool/webpack/mode.md)
     - [配置示例](./buildtool/webpack/exmaple.md)
