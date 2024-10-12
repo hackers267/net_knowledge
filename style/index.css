@@ -1,3 +1,7 @@
 #content p {
   text-indent: 2em;
 }
+
+#content .nodeLabel p {
+  text-indent: 0;
+}
