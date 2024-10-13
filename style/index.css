@@ -2,6 +2,10 @@
   text-indent: 2em;
 }
 
+#content blockquote p {
+  text-indent: 0;
+}
+
 #content .nodeLabel p {
   text-indent: 0;
 }

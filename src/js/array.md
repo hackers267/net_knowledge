@@ -133,6 +133,33 @@ Array.of(undefined); // [undefined]
 
 ### isArray
 
+*Array.isArray*方法用于判断一个变量是否是数组。
+
+> 注：Array.isArray方法不检查值的原型链。
+
+示例：
+
+```js
+// 以下结果都为true
+Array.isArray([]);
+Array.isArray([1]);
+Array.isArray(new Array());
+Array.isArray(new Array("a","b","c"));
+Array.isArray(new Array(3));
+Array.isArray(Array.prototype);
+
+// 以下结果都为false
+Array.isArray();
+Array.isArray({});
+Array.isArray(null);
+Array.isArray(undefined);
+Array.isArray(17);
+Array.isArray("Array");
+Array.isArray(true);
+Array.isArray(false);
+Array.isArray(new Unit8Array(32));
+```
+
 ## 实例方法
 
 JavaScript 的 `Array` 实例方法可以根据它们的功能进行多种分类。以下是一些合法的分类方式：
