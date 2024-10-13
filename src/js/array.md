@@ -131,6 +131,50 @@ Array.of(undefined); // [undefined]
 
 ### fromAsync
 
+*Array.fromAsync*和*Array.from*类似，但*Array.fromAsync*可以由一个异步可迭代对象，可迭代对象或类数组对象创建一个新的、浅拷贝的Array实例。其语法和*Array.from*是一样的。即:
+
+```js
+Array.fromAsync(arrayLike);
+Array.fromAsync(arrayLike,mapFn);
+Array.fromAsync(arrayLike,mapFn,thisArg);
+```
+
+在这里，`mapFn`和`thisArg`的作用和*Array*中的作用是一样的。这里就不作介绍了。如果想要具体了解，请查看[Array.from](#from);
+
+*Array.fromAsync*可以处理以下对象:
+
+- 异步可迭代对象(如*ReadableStream*和*AsyncGenerator*)
+- 可迭代对象
+- 类数组对象(带有*length*属性和索引元素的对象)
+
+*Array.fromAsync*和*Array.from*有以下的不同：
+
+- *Array.fromAsync*可以处理异步可迭代对象
+- *Array.fromAsync*返回一个会兑现为数组实例的[Promise](./promise.md)
+- 如何使用非异步可迭代对象调用*Array.fromAsync*，则要添加到数组中的每个元素(无论是否为Promise)都会先等待其兑现。
+- 如果提供了*mapFn*,则则其输入和输出会在内部等行兑现。
+
+我们先来看看示例：
+
+```js
+const asyncIterable = (async function* () {
+  for (let i = 0; i < 5; i++) {
+    await new Promise((resolve)=> setTimeout(resolve,10 * i));
+    yield i;
+  }
+})();
+Array.fromAsync(asyncIterable).then(array => console.log(array)); // [0, 1, 2, 3, 4]
+
+Array.fromAsync(new Set(1,2,3)).then(array => console.log(array)); // [1,2,3]
+
+Array.fromAsync(new Set([Promise.resolve(1), Promise.resolve(2), Promise.resolve(3)])).then(array => console.log(array));
+```
+
+我们需要知道的是*Array.fromAsync*和*Promise.all*都可以将一个promise可迭代对象转换为一个数组的promise。但它们有两个关键区别:
+
+- *Array.fromAsync*会依次等待对象中产生的每个值兑现。*Promise.all*会并行等待所有值兑现。
+- *Array.fromAsync*惰性迭代可迭代对象，并且不会获取下一个值，直到当前值被兑现。*Promise.all*预先获取所有值并等待它们全部兑现。
+
 ### isArray
 
 *Array.isArray*方法用于判断一个变量是否是数组。
