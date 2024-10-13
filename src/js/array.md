@@ -251,10 +251,54 @@ JavaScript 的 `Array` 实例方法可以根据它们的功能进行多种分类
   - `values()`
   - `with()`
 
+```mermaid
+mindmap
+  Array
+    修改原数组
+      copyWithin
+      fill
+      pop
+      push
+      reverse
+      shift
+      sort
+      splice
+      unshift
+    不修改原数组
+      at
+      concat
+      entries
+      every
+      filter
+      find
+      findIndex
+      findLast
+      findLastIndex
+      flat
+      flatMap
+      forEach
+      includes
+      indexOf
+      join
+      keys
+      lastIndexOf
+      map
+      reduce
+      reduceRight
+      slice
+      some
+      toLocaleString
+      toReversed
+      toSorted
+      toSpliced
+      toString
+      values
+      with
+```
+
 ### 2. 根据是否返回新数组分类：
 - **返回新数组的方法**：
   - `concat()`
-  - `entries()`
   - `filter()`
   - `flat()`
   - `flatMap()`
@@ -267,37 +311,89 @@ JavaScript 的 `Array` 实例方法可以根据它们的功能进行多种分类
   - `toSorted()`
   - `toSpliced()`
   - `values()`
-
-- **不返回数组，返回其他值或`undefined`**：
-  - `at()`
-  - `copyWithin()`
-  - `entries()`
-  - `every()`
-  - `fill()`
   - `filter()`
-  - `find()`
-  - `findIndex()`
-  - `findLast()`
-  - `findLastIndex()`
-  - `forEach()`
-  - `includes()`
-  - `indexOf()`
-  - `join()`
-  - `lastIndexOf()`
-  - `pop()`
-  - `push()`
-  - `reduce()`
-  - `reduceRight()`
-  - `reverse()`
-  - `shift()`
-  - `slice()`
-  - `some()`
+  - `copyWithin()`
   - `sort()`
+  - `reverse()`
   - `splice()`
+- **返回索引**
+  - `findIndex()`
+  - `findLastIndex()`
+- **返回布尔值**
+  - `every()`
+  - `some()`
+  - `includes()`
+- **返回字符串**
   - `toLocaleString()`
   - `toString()`
+  - `join()`
+- **返回数组中元素**
+  - `at()`
+  - `find()`
+  - `findLast()`
+  - `forEach()`
+  - `lastIndexOf()`
+  - `pop()`
+  - `indexOf()`
+  - `shift()`
+- **返回其它元素**
+  - `reduce()`
+  - `reduceRight()`
+  - `push()`
   - `unshift()`
-  - `with()`
+  - `entries()`
+
+  
+
+```mermaid
+mindmap
+  Array
+    返回新数组
+      concat
+      filter
+      flat
+      flatMap
+      keys
+      map
+      reduce
+      reduceRight
+      slice
+      toReversed
+      toSorted
+      toSpliced
+      values
+      filter
+      copyWithin
+      sort
+      reverse
+      splice
+    返回索引
+      findIndex
+      findLastIndex
+    返回布尔值
+      every
+      some
+      includes
+    返回字符串
+      toLocaleString
+      toString
+      join
+    返回数组中元素
+      at
+      find
+      findLast
+      forEach
+      lastIndexOf
+      pop
+      indexOf
+      shift
+    返回其它元素
+      reduce
+      reduceRight
+      push
+      unshift
+      entries
+```
 
 ### 3. 根据是否接受回调函数分类：
 - **接受回调函数的方法**：
@@ -341,6 +437,51 @@ JavaScript 的 `Array` 实例方法可以根据它们的功能进行多种分类
   - `unshift()`
   - `values()`
   - `with()`
+
+```mermaid
+mindmap
+Array
+  接收回调函数
+    every
+    filter
+    find
+    findIndex
+    findLast
+    findLastIndex
+    forEach
+    map
+    reduce
+    reduceRight
+    some
+  不接收回调函数
+    at
+    concat
+    copyWithin
+    entries
+    fill
+    flat
+    flatMap
+    includes
+    indexOf
+    join
+    keys
+    lastIndexOf
+    pop
+    push
+    reverse
+    shift
+    slice
+    sort
+    splice
+    toLocaleString
+    toReversed
+    toSorted
+    toSpliced
+    toString
+    unshift
+    values
+    with
+```
 
 ### 4. 根据迭代方式分类：
 - **迭代数组元素的方法**：
@@ -386,6 +527,53 @@ JavaScript 的 `Array` 实例方法可以根据它们的功能进行多种分类
   - `unshift()`
   - `values()`
   - `with()`
+
+```mermaid
+mindmap
+Array
+  迭代数组
+    every
+    filter
+    find
+    findIndex
+    findLast
+    findLastIndex
+    forEach
+    map
+    reduce
+    reduceRight
+    some
+  不迭代数组
+    at
+    concat
+    copyWithin
+    entries
+    fill
+    flat
+    flatMap
+    includes
+    indexOf
+    join
+    keys
+    lastIndexOf
+    pop
+    push
+    reduce
+    reduceRight
+    reverse
+    shift
+    slice
+    sort
+    splice
+    toLocaleString
+    toReversed
+    toSorted
+    toSpliced
+    toString
+    unshift
+    values
+    with
+```
 
 这些分类方式可以帮助开发者更好地理解和使用数组方法，根据不同的需求选择合适的方法来处理数组数据。
 
