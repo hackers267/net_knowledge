@@ -14,10 +14,10 @@ const array = [1,'2',true];
 
 首先，JavaScript中数组的方法可以分为静态方法和实例方法，其中，数组的静态方法比较简单，截止目前(2024-10)一共有4个静态方法和38个实例方法。这4个静态方法分别如下:
 
-- Array.from()
-- Array.of()
-- Array.fromAsync()
-- Array.isArray()
+- [Array.from()](#from)
+- [Array.of()](#of)
+- [Array.fromAsync()](#fromasync)
+- [Array.isArray()](#isarray)
 
 由于实例方法过多，这个就不一一列出了，我们将在下面的[章节](#实例方法)中展开讲解。
 
@@ -27,10 +27,10 @@ Array的静态方法可以也作用分为2类：
 
 - 创建类方法
   - [Array.from()](#from)
-  - Array.of()
-  - Array.fromAsync()
+  - [Array.of()](#of)
+  - [Array.fromAsync()](#fromasync)
 - 判断类方法
-  - Array.isArray()
+  - [Array.isArray()](#isarray)
 
 以图表的形式表示如下:
 
@@ -110,6 +110,24 @@ range("A".charCodeAt(0),"Z".charCodeAt(0),1).map(x=> String.fromCharCode(x)); //
 
 
 ### of
+
+*Array.of*方法通过可变数量的参数来创建对应数量元素的元素，并不考虑参数的数量或类型。比如：
+
+```js
+Array.of(7); // [7]
+Array.of(); // []
+Array.of(1,2,3,4); // [1,2,3,4]
+Array.of(undefined); // [undefined]
+```
+
+在绝大部分情况下，`Array.of`方法和`Array`方法其创建出相同的数组。但在其只接收一个参数，且为下面情况之一时有所不同：
+
+- 参数是一个整数
+- 参数是一个浮点数
+
+当参数是一个整数时，`Array.of`依然会创建以这个整数为单元素的一个数组。但`Array`则会创建一个以参数为个数，以**空属性**为元素的一个数组。
+
+当参数是一个浮点数时，`Array.of`依然会创建以这个浮点数为单元步的一个数组。但`Array`则会报错:`Uncaught RangeError: Invalid array length`
 
 ### fromAsync
 
