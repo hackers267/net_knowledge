@@ -85,6 +85,27 @@ const mapper = new Map([
 Array.from(mapper.values()); // ["JS","TS","Rust"]
 Array.from(mapper,function(element,index) { return element[1] }); // ["JS","TS","Rust"]
 Array.from(mapper, element => element[1]);
+
+function f() {
+  return Array.from(arguments);
+}
+f(1,2,3) // [1,2,3]
+
+const images = document.querySelectorAll("img");
+const sources = Array.from(images, image => image.src);
+const insecureSources = sources.filter(link => link.startsWith("http://"));
+
+// Array.from({length:5})方法会生成一个长度为5，元素全部为undefined的数组
+Array.from({length: 5}, (v,i) => i); // [1,2,3,4,5]
+
+const range = (start,stop,step) => {
+  return Array.from({length: (stop - start) / step + 1}, (_,i) => start + i * step);
+}
+
+range(0,4,1); // [0,1,2,3,4]
+range(1,10,2); // [1,3,5,7,9]
+
+range("A".charCodeAt(0),"Z".charCodeAt(0),1).map(x=> String.fromCharCode(x)); // [""]
 ```
 
 
