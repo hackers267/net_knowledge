@@ -623,3 +623,86 @@ array.at(-1); // 3 获取数组中的最后一个元素
 - 可以使用索引访问到的元素，也可以使用*at*方法访问
 - *at*中可以使用负数访问数组元素
 
+### copyWithin
+
+*copyWithin*方法用于在数组内部复制元素。其会把数组中某部分的元素复制到指定的位置。其基本形式如下:
+
+```js
+copyWithin(target)
+copyWithin(target, start)
+copyWithin(target, start, stop)
+```
+
+通过签名，我们知道，*copyWithin*方法会把从*start*到*stop*之前的元素复制到以*target*为开始索引的位置。
+
+需要注意的是，*target*,*start*和*stop*都可以使用负数。如果使用的是负数，其取值分为以下情况(*target*,*start*和*stop*统一为*x*):
+
+- -array.length < x < 0 , x取值为*x+array.length*
+- x < -array.length, x取值为*0*
+
+或者说取值为下面的公式: `max(0,x+array.length)`
+
+并且在下面的几种情况下，*copyWithin*方法不会复制任何内容:
+
+- *target* > *array.length*
+- *start* > *array.length*
+- *end* > *start*
+
+同时，*start*和*stop*有以下的默认值:
+
+- start: 0
+- end: array.length
+
+
+示例：
+```js
+const array = [1,2,3];
+array.copyWithin(2); // [1,2,1]; array也是[1,2,1]
+const array1= [1,2,3];
+array1.copyWithin(1,2); // [1,3,3]; array1也是[1,3,3]
+const array2 = [1,2,3];
+array2.copyWithin(1,2,1); // [1,2,3]; array2也是[1,2,3]
+```
+
+重点:
+
+- *copyWithin*方法返回修改后的数组
+- *copyWithin*方法会修改原数组
+
+### entries
+
+*entries*方法返回一个数组迭代器对象，该对象包含数组中每个索引的键/值对。
+
+示例：
+
+```js
+const array = ["a","b","c"];
+array.entries().forEach(v=>console.log(v)); // [0,'a'] [1,'b'] [2,'c']
+```
+
+重点:
+
+- 返回值是一个可迭代对象
+
+
+### every
+
+*every*方法通过一个断言函数来查看是否数组内的内容都符合某个条件。其返回值为一个布尔值。只要数组中有一个元素不能通过断言函数，则返回结果就为*false*。
+
+示例如下:
+
+```js
+const array = [1,2,3,4];
+array.every(x=>x<5); // true;
+array.every(x=>x%2===0); // false
+```
+
+因为只要数组中有一个元素不符合断言函数，最终结果就为*false*。所以*every*方法并不一定要遍历完数组中的所有元素。在遍历过程中，只要有一个元素不符合断言函数，那么*every*方法就会中断遍历并立即返回*false*.
+
+重点:
+
+- 空数组的*every*方法永远返回*true*
+- *every*不遍历*稀疏数组*中的空元素。
+- *every*方法遇到返回*false*的元素后立即返回*false*
+
+> ⚠️ 全部由空元素组成的数组的*every*方法也永远返回*true*.
