@@ -706,3 +706,7 @@ array.every(x=>x%2===0); // false
 - *every*方法遇到返回*false*的元素后立即返回*false*
 
 > ⚠️ 全部由空元素组成的数组的*every*方法也永远返回*true*.
+
+### fill
+
+TODO
