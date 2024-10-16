@@ -40,3 +40,9 @@
 # 数据库
 
 - [MySql](./database/mysql.md)
+  - [OrderBy](./database/mysql/order_by.md)
+
+# 算法
+
+- [算法](./algo/readme.md)
+  - [排序](./algo/order.md)
