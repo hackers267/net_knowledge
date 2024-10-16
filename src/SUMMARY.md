@@ -45,4 +45,4 @@
 # 算法
 
 - [算法](./algo/readme.md)
-  - [排序](./algo/order.md)
+  - [排序](./algo/sort.md)
