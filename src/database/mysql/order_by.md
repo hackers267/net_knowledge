@@ -97,12 +97,68 @@ select distinct department from employeees order by department;
 
 # QA
 
-- MySQL中的排序使用的是什么算法?是否是稳定排序算法?
+- **MySQL中的排序使用的是什么算法?是否是稳定排序算法?**
+
+在MySQL中的排序中主要使用了3种排序方法:
+
+- 快速排序法
+- 归并排序法
+- 堆排序法
+
+但并不是在所有的情况下都会用到这些排序方法。
+
+当数据量比较小的时候，MySQL会使用*快速排序*算法对数据进行排序。但当数据量达到一定大小的时候，就是启用*归并排序*，那么这个大小是多大呢？这个大小就是*sort buffer*的大小。因为MySQL中排序是以以下的方法进行的:
+
+1. 获取所有满足*where*条件的数据记录。
+2. 对于每条记录，将记录的主键+排序键取出放入*sort buffer*中
+3. 当
+  - *sort buffer*可以存放所有记录的主键+排序键时，直接进行排序
+  - *sort buffer*存放不下所有记录的主键，则会产生临时文件，临时文件中保存的是已排序好的记录。在产生临时文件后，会使用*归并排序*以确保临时文件中的记录是**有序**的
+4. 循环上面的过程，直到所有记录全部排序完成
+5. 扫描排序好的序列对，并利用*id*到获取select需要返回的列
+6. 把扫描结果返回给用户
+
+我们看到，在排序中，如果参与排序的结果集很大或参与排序的字段很多，就会很容易的达到*sort buffer*的上限，从而产生临时文件，而触发耗时的IO操作。同时，我们发现，我对所有的有关记录排序完成后，MySQL会重新使用id再去获取我们需要的列。如果我们在保证排序合理的同时，保证排序后的id字段也是有序的，那么我们就可以提升排序完成后，扫描返回列的性能，从而在整体上提升查询语句的性能。
+
+那么是什么决定了*sort_buffer*的大小呢?是*sort_buffer_size*参数决定的。
+
+更多详情请参见[order by 原理以及优化](https://cloud.tencent.com/developer/article/1181272)
+
+在上面我们提到的3种排序算法中，会稳定性为:
+
+算法 | 稳定性
+---|---
+快速排序 | 不稳定排序
+归并排序 | 稳定排序
+堆排序 | 不稳定排序
 
 
-- 影响排序的内容有哪些?
+
+- **影响排序的内容有哪些?**
 
 
-- 如何自定义排序?
+- **如何自定义排序?**
 
+可以利用*order by*中可以使用函数和表达式的特性来实现自定义排序，比如以下的场景:
 
+用户数据库中按姓名排序，排序按*赵,钱,孙,李*的顺序排序，如果是其它姓氏，则不需要特定排序。
+
+```sql
+select name,age,sex,
+  case
+    when name like '赵%' then 1
+    when name like '钱%' then 2
+    when name like '孙%' then 3
+    when name like '李%' then 3
+    else 5
+  end as full_name
+  from user
+  order by full_name,name;
+```
+
+- **MySQL中关键字执行的优先级是怎样的**
+
+```mermaid
+flowchart LR
+  where --> group("groub by") --> having --> select --> distinct --> order("order by") --> limit
+```
