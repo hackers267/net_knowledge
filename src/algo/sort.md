@@ -20,6 +20,40 @@
 - **空间复杂度**:*O(n)*
 - **稳定性**:稳定排序。
 
+示例代码:
+
+```rust
+fn main() {
+  let mut nums = [1,2,3,4,5];
+  bubble_sort1(&mut nums);
+  println!("sorted nums is {:?}",nums);
+  bubble_sort2(&mut nums);
+  println!("sorted nums is {:?}",nums);
+}
+
+fn bubble_sort1(nums: &mut [i32]) {
+  for i in 1..nums.len() {
+    for j in 0..nums.len()-i {
+      if nums[j] < nums[j+1] {
+        nums.swap(j,j+1)
+      }
+    }
+  }
+}
+
+fn bubble_sort2(nums: &mut [i32]) {
+  let mut len = nums.len() - 1;
+  while len > 0 {
+    for i in 0..len {
+      if nums[i] > nums[i+1] {
+        nums.swap(i,i+1)
+      }
+    }
+    len -= 1;
+  }
+}
+```
+
 ## 选择排序(Selection Sort)
 
 - **特点**:从未排序的元素中找到最小(或最大)的元素，火放到已排序序列的末尾。
