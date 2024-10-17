@@ -56,10 +56,36 @@ fn bubble_sort2(nums: &mut [i32]) {
 
 ## 选择排序(Selection Sort)
 
-- **特点**:从未排序的元素中找到最小(或最大)的元素，火放到已排序序列的末尾。
+- **特点**:从未排序的元素中找到最小(或最大)的元素，放到已排序序列的末尾。
 - **时间复杂度**:*O(n<sup>2</sup>)*
 - **空间复杂度**:*O(1)*
 - **稳定性**:不稳定排序
+
+
+代码示例:
+
+```rust
+fn main() {
+  let mut nums = [2,3,4,1,5];
+  selection_sort(&mut nums);
+  println!("nums is {:?}",nums);
+}
+
+fn selection_sort(nums: &mut [i32]) {
+  let len = nums.len();
+  for i in 0..len {
+    let mut index = i;
+    let mut max = nums[index];
+    for j in i+1..len {
+      if nums[j] > max {
+        max = nums[j];
+        index = j;
+      }
+    }
+    nums.swap(i,index);
+  }
+}
+```
 
 ## 插入排序(Insertion Sort)
 
