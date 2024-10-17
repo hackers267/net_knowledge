@@ -46,3 +46,7 @@
 
 - [算法](./algo/readme.md)
   - [排序](./algo/sort.md)
+
+# Web
+
+- [跨域](./web/cors.md)
