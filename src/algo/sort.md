@@ -94,6 +94,36 @@ fn selection_sort(nums: &mut [i32]) {
 - **空间复杂度**:*O(1)*
 - **稳定性**:稳定排序
 
+示例代码:
+
+```rust
+fn main() {
+  let mut nums = [2,5,3,4,1];
+  insertion_sort(&mut nums);
+  println!("sorted nums is {:?}",nums);
+}
+
+fn insertion_sort(nums: &mut [i32]) {
+  let len = nums.len();
+  for i in 1..len {
+    for j in 0..i {
+      let current = nums[i];
+      if current < nums[j] {
+        move_right(nums,j,i);
+        nums[j] = current;
+      }
+    }
+  }
+}
+fn move_right(nums: &mut [i32], start: usize,end:usize) {
+  let mut current = end;
+  while current > start {
+    nums[current] = nums[current - 1];
+    current -=1;
+  }
+}
+```
+
 ## 希尔排序(Shell Sort)
 
 - **特点**:是插入排序的一种更高效的改进版本，也称为缩小增量排序。
