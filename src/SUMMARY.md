@@ -15,6 +15,7 @@
   - [双向绑定](./vue/model.md)
 
 - [React](./react/Readme.md)
+  - [生命周期](./react/lifetime.md)
   
 # 库
 
