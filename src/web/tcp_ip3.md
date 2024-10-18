@@ -2,7 +2,7 @@
 
 # TCP连接的三次握手
 
-![TCP三次握手](/images/tcp-shakes-hands-three-times.png "TCP三次握手")
+![TCP三次握手](./images/tcp-shakes-hands-three-times.webp "TCP三次握手")
 
 建立一个TCP连接需要*三次握手*：
 
@@ -36,11 +36,11 @@
 
 其过程如下:
 
-![资源浪费](/images/tcp_error1.png "资源浪费")
+![资源浪费](./images/tcp_error1.webp "资源浪费")
 
 还有一种情况是已经失效的客户端发出的请求信息，由于某种原因传输到了服务器，服务器以为是客户端发出的有效请求，接收后产生错误。
 
-![延迟错误](/images/tcp_error2.png "延迟错误")
+![延迟错误](./images/tcp_error2.webp "延迟错误")
 
 所以我们需要第三次握手来确认这个过程。
 
@@ -48,7 +48,7 @@
 
 # 四次挥手
 
-![四次挥手](/images/tcp-waves-four-times.png "四次挥手")
+![四次挥手](./images/tcp-waves-four-times.webp "四次挥手")
 
 客户端和服务端都可以主动断开连接，断开连接后主机的*资源*将被释放。
 
