@@ -5,6 +5,8 @@
 - [Js](./js/Readme.md)
   - [数组](./js/array.md)
   - [Promise](./js/promise.md)
+  - [MessageChannel](./js/message_channel.md)
+  - [MessagePort](./js/message_port.md)
 
 # 框架
 
