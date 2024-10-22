@@ -4,17 +4,38 @@ language = "en"
 multilingual = false
 src = "src"
 title = "编程知识"
+description = "欢迎来到我们的编程知识博客！为编程爱好者提供丰富的学习资源和实用技术指南。涵盖多种编程语言、框架、算法和项目实战，适合初学者和专业开发者。加入我们，开启你的编程之旅！"
+
+[build]
+build-dir = "book"
+
+[rss4mdbook]
+url-base = "https://hackers267.github.io/net_knowledge"
 
 [preprocessor]
 
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
 
+[preprocessor.open-on-gh]
+command = "mdbook-open-on-gh"
+render = ["html"]
+
+[preprocessor.last-changed]
+command = "mdbook-last-changed"
+renderer = ["html"]
+
 [output]
 
 [output.html]
 additional-js = ["mermaid.min.js", "mermaid-init.js"]
-additional-css = ["style/index.css"]
+additional-css = ["style/index.css", "style/open-in.css"]
+
+# Required: Your repository URL used in the link.
+git-repository-url = "https://github.com/hackers267/net_knowledge"
+# The text to use in the footer.
+# The link text is marked by `[]`
+open-on-text = "Found a bug? [Edit this page on GitHub.]"
 
 [output.html.fold]
 enable = true
