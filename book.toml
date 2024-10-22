@@ -11,6 +11,8 @@ build-dir = "book"
 
 [rss4mdbook]
 url-base = "https://hackers267.github.io/net_knowledge"
+rss_desc = "feedId:71417233116473344+userId:69000772055309312"
+rss_title = "赛博墨水"
 
 [preprocessor]
 
