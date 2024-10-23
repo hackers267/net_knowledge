@@ -19,6 +19,8 @@
 - [React](./react/Readme.md)
   - [生命周期](./react/lifetime.md)
   - [Hooks](./react/hooks.md)
+  - [算法](./react/algo.md)
+    - [位算法](./react/algo/bit.md)
   
 # 库
 
@@ -40,6 +42,8 @@
 # Rust
 
 - [Rust](./rust/readme.md)
+  - [算法](./rust/algo.md)
+    - [位运算](./rust/algo/bit.md)
 
 # 数据库
 
