@@ -46,6 +46,7 @@
     - [位运算](./rust/algo/bit.md)
     - [树](./rust/algo/tree.md)
       - [树的表示](./rust/algo/tree/struct.md)
+      - [树的遍历](./rust/algo/tree/traverse.md)
 
 # 数据库
 

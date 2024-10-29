@@ -63,8 +63,14 @@ where
     pub fn get_left(&self) -> Link<T> {
         self.left.clone()
     }
+    pub fn get_left_mut(&mut self) -> Option<&mut Box<BinaryTree<T>>> {
+        self.left.as_mut()
+    }
     pub fn get_right(&self) -> Link<T> {
         self.right.clone()
+    }
+    pub fn get_right_mut(&mut self) -> Option<&mut Box<BinaryTree<T>>> {
+        self.right.as_mut()
     }
     fn create_link(node: BinaryTree<T>) -> Link<T> {
         Some(Box::new(node))

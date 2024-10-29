@@ -27,5 +27,6 @@
 
 ```rust
 {{#include ../../src/binary_tree.rs}}
-{{#playground ../../src/main.rs:4:23}}
+{{#include ../../src/bin/tree_base.rs:3:}}
+
 ```

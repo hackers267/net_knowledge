@@ -1,6 +1,5 @@
-use binary_tree::BinaryTree;
+use demo::binary_tree::BinaryTree;
 
-mod binary_tree;
 fn main() {
     run_binary_tree();
 }
