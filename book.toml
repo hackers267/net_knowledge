@@ -16,6 +16,8 @@ rss_title = "赛博墨水"
 
 [preprocessor]
 
+[preprocessor.pagetoc]
+
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
 
@@ -30,8 +32,8 @@ renderer = ["html"]
 [output]
 
 [output.html]
-additional-js = ["mermaid.min.js", "mermaid-init.js"]
-additional-css = ["style/index.css", "style/open-in.css"]
+additional-js = ["mermaid.min.js", "mermaid-init.js", "theme/pagetoc.js"]
+additional-css = ["style/index.css", "style/open-in.css", "theme/pagetoc.css"]
 
 # Required: Your repository URL used in the link.
 git-repository-url = "https://github.com/hackers267/net_knowledge"
