@@ -44,6 +44,8 @@
 - [Rust](./rust/readme.md)
   - [算法](./rust/algo.md)
     - [位运算](./rust/algo/bit.md)
+    - [树](./rust/algo/tree.md)
+      - [树的表示](./rust/algo/tree/struct.md)
 
 # 数据库
 
