@@ -44,3 +44,8 @@ open-on-text = "Found a bug? [Edit this page on GitHub.]"
 [output.html.fold]
 enable = true
 level = 1
+[output.html.playground]
+editable = true
+line-numbers = true
+[output.html.search]
+enable = true

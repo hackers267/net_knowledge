@@ -47,6 +47,7 @@
     - [树](./rust/algo/tree.md)
       - [树的表示](./rust/algo/tree/struct.md)
       - [树的遍历](./rust/algo/tree/traverse.md)
+      - [二叉搜索树](./rust/algo/tree/binary_search_tree.md)
 
 # 数据库
 

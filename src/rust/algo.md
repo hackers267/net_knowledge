@@ -7,3 +7,5 @@
 - [位算法](./algo/bit.md)
 - [树](./algo/tree.md)
   - [树的表示](./algo/tree/struct.md)
+  - [树的遍历](./algo/tree/traverse.md)
+  - [二叉搜索树](./algo/tree/binary_search_tree.md)
