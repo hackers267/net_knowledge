@@ -31,6 +31,8 @@
   - [操作符](./rxjs/operator/readme.md)
     - [联结创建操作符](./rxjs/operator/joincreate.md)
       - [combineLatest](./rxjs/operator/combinelatest.md)
+    - [联结操作符](./rxjs/operator/join.md)
+      - [withLastestFrom](./rxjs/operator/withlatestfrom.md)
   - [WebSocket](./rxjs/websocket.md)
 
 # 打包工具
