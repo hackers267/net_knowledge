@@ -28,6 +28,9 @@
 
 - [RxJs](./rxjs/Readme.md)
   - [Observable](./rxjs/observable.md)
+  - [操作符](./rxjs/operator/readme.md)
+    - [联结创建操作符](./rxjs/operator/joincreate.md)
+      - [combineLatest](./rxjs/operator/combinelatest.md)
   - [WebSocket](./rxjs/websocket.md)
 
 # 打包工具
