@@ -79,4 +79,4 @@
     - [XSS攻击](./security/fe/xss.md)
     - [CSRF攻击](./security/fe/csrf.md)
     - [SQL注入](./security/fe/sql.md)
-    - [安全存储和加密](./security/fe/cryto.md)
+    - [安全存储和加密](./security/fe/crypto.md)
