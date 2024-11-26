@@ -2,7 +2,7 @@
 
 # 基于时间的过滤操作符
 
-在RxJS中，有几个基于时间的过滤操作符，它们分别是`auditTime`,`debounceTime`,`sampleTime`,`throttleTime`。
+在RxJS中，有几个基于时间的过滤操作符，它们分别是`auditTime`,`debounceTime`,`sampleTime`,`throttleTime`。同时还有`audit`,`debounce`,`sample`和`throttle`四个更通用的过滤操作符。
 
 我们在这里把这几个操作符分别两组：`debounceTime`,`throttleTime`和`auditTime`,`sampleTime`。
 
@@ -174,3 +174,5 @@ source$
 
 - `auditTime`是等到每个时间间隔结束的时候，去看这个时间间隔内源Observable最后发出的那个值，然后把这个值拿去处理，重点在每个时间间隔**结尾**那个值。
 - `sampleTime`是按照固定的时间间隔，到那个时间点了就去看源Observable当时正在发出的值，然后把这个值拿去处理，重点在每个时间间隔那个点儿上源Observable**正在**发出的值。
+
+在我们了解了`auditTime`,`debounceTime`,`sampleTim`和`throttleTime`四个操作符之后，其同样的逻辑也适用于`audit`,`debounce`,`sample`和`throttleTime`四个操作符，主要的区别在于其参数不同，前四个的参数都是固定的时间参数，后四个的参数是依据时间发出值的Observable.
