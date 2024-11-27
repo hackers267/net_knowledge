@@ -176,3 +176,37 @@ source$
 - `sampleTime`是按照固定的时间间隔，到那个时间点了就去看源Observable当时正在发出的值，然后把这个值拿去处理，重点在每个时间间隔那个点儿上源Observable**正在**发出的值。
 
 在我们了解了`auditTime`,`debounceTime`,`sampleTim`和`throttleTime`四个操作符之后，其同样的逻辑也适用于`audit`,`debounce`,`sample`和`throttleTime`四个操作符，主要的区别在于其参数不同，前四个的参数都是固定的时间参数，后四个的参数是依据时间发出值的Observable.
+
+## 弹珠图
+
+![auditTime.png](./auditTime.png "auditTime")
+
+<center><b>auditTime弹珠图</b></center>
+
+![sampleTime.png](./sampleTime.png "sampleTime")
+
+<center><b>sampleTime弹珠图</b></center>
+
+![debounceTime.png](./debounceTime.png "debounceTime")
+
+<center><b>debounceTime弹珠图</b></center>
+
+![throttleTime.png](./throttleTime.png "throttleTime")
+
+<center><b>throttleTime弹珠图</b></center>
+
+![audit.svg](./audit.svg "audit")
+
+<center><b>audit弹珠图</b></center>
+
+![sample.png](./sample.png "sample")
+
+<center><b>sample弹珠图</b></center>
+
+![debounce.svg](./debounce.svg "debounce")
+
+<center><b>debounce弹珠图</b></center>
+
+![throttle.svg](./throttle.svg "throttle")
+
+<center><b>throttle弹珠图</b></center>

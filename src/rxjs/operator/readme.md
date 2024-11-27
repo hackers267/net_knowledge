@@ -33,5 +33,16 @@ Observables最常发出的是普通值，如字符串和数字，但令人惊讶
 - debounceTime
 - sampleTime
 - throttleTime
+- audit
+- debounce
+- sample
+- throttle`
 
 具体内容可以参考[基于时间的过滤操作符](./filterByTime.md)
+
+除了上面的这类基于时间的操作符，还有一些简易的过滤操作符。下面是主要的简易操作符:
+
+- first
+- last
+- elementAt
+- ignoreElements

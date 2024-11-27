@@ -35,6 +35,7 @@
     - [联结操作符](./rxjs/operator/join.md)
       - [withLastestFrom](./rxjs/operator/withlatestfrom.md)
     - [时间过滤操作符](./rxjs/operator/filterByTime.md)
+    - [简易操作符](./rxjs/operator/filterSimple.md)
   - [WebSocket](./rxjs/websocket.md)
 
 # 打包工具
